@@ -26,7 +26,7 @@ void loop()
 			reset();
 		}
 		else if (offTime > 200) {
-			advanceMode();
+			reducePower();
 		}
 		lastTime = millis();
 	}
@@ -60,7 +60,7 @@ void turnOff() {
 	setPowerLevel(-1);
 }
 
-void advanceMode(){
+void reducePower(){
 	if (!isLowestLevel(powerLevel)) {
 		powerLevel++;
 	}
