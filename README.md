@@ -9,7 +9,7 @@
 4. 30%
 
 #### Function:
-When switched on the trinket will drive the mosfet at level 1.  Switching off and on again within 10 seconds will advance the trinket to the next mode until it reaches mode 4.  If turned back on after more than 10 seconds the trinket will reset to mode 1.
+When switched on the trinket will drive the mosfet at level 1.  Switching off and on again within 10 seconds will advance the trinket to the next level until it reaches level 4.  If turned back on after more than 10 seconds the trinket will reset to level 1.
 
 #### Wiring:
   * Wire a switch between the Trinket's GND pin and pin 0
