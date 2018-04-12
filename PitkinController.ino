@@ -12,17 +12,20 @@ void setup()
 
 void loop()
 {
-	// when the switchPin is LOW the switch is in the ON position
+	//get currentTime (since on) at the start of each loop
+	unsigned long currentTime = millis();
+
+	//when the switchPin is LOW the switch is in the ON position
 	while (digitalRead(switchPin) == LOW) {
 		setPowerLevel(mode);
 
 		//if the switch has been off for more than 10 seconds reset to mode 0;
-		if ((millis() - timeStamp) > 10000) {
+		if ((currentTime - timeStamp) > 10000) {
 			mode = 0;
 		}
 
 		//else if the switch has been off for more than 200 milliseconds advance to the next mode
-		else if ((millis() - timeStamp) > 200) {
+		else if ((currentTime - timeStamp) > 200) {
 			mode++;
 		}
 
@@ -42,6 +45,5 @@ void loop()
 void setPowerLevel(int level) {
 	//Output levels for the PWM: 100%, 80%, 60% and 30%
 	const int output[] = { 255, 204, 153, 77 };
-
 	analogWrite(pwmPin, output[level]);
 }
