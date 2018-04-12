@@ -61,8 +61,7 @@ void turnOff() {
 }
 
 void advanceMode(){
-	powerLevel++;
-	if (isLowestLevel(powerLevel)) {
-		powerLevel = lowestLevel;
+	if (!isLowestLevel(powerLevel)) {
+		powerLevel++;
 	}
 }	
