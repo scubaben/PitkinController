@@ -21,20 +21,13 @@ void loop()
 
 	while (isSwitchOn()) {
 		setPowerLevel(powerLevel);
-
 		unsigned long offTime = currentTime - lastTime;
-
 		if (offTime > 10000) {
 			reset();
 		}
 		else if (offTime > 200) {
-			powerLevel++;
+			advanceMode();
 		}
-
-		if (isLowestLevel(powerLevel)) {
-			powerLevel = lowestLevel;
-		}
-
 		lastTime = millis();
 	}
 
@@ -66,3 +59,10 @@ void setPowerLevel(int level) {
 void turnOff() {
 	setPowerLevel(-1);
 }
+
+void advanceMode(){
+	powerLevel++;
+	if (isLowestLevel(powerLevel)) {
+		powerLevel = lowestLevel;
+	}
+}	
