@@ -18,7 +18,7 @@ When switched on the Trinket will drive the mosfet at level 1.  Switching off an
 #### Wiring:
   * Wire a switch between the Trinket's GND pin and pin 0
   * Connect Trinket pin 1 to pin 1 on the mosfet (gate)
-  * Connect pin 2 of the mosfet to the negative lead of the EO cord
-  * Connect pin 3 of the mosfet to the negative lead of the battery
+  * Connect pin 2 of the mosfet (drain) to the negative lead of the EO cord
+  * Connect pin 3 of the mosfet (source) to the negative lead of the battery
   * Connect Trinket BAT+ and GND pins to the respective battery leads
 ##### NOTE: The Trinket must be continuously powered, it cannot be placed in-line or anywhere after switched power
