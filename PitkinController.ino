@@ -1,8 +1,5 @@
 #define switchPin 0
 #define pwmPin 1
-
-//Output levels for the PWM: 100%, 80%, 60% and 30%
-const int output[] = { 255, 204, 153, 77 };
 int mode = 0;
 unsigned long timeStamp = 0;
 
@@ -43,5 +40,8 @@ void loop()
 }
 
 void setPowerLevel(int level) {
+	//Output levels for the PWM: 100%, 80%, 60% and 30%
+	const int output[] = { 255, 204, 153, 77 };
+
 	analogWrite(pwmPin, output[level]);
 }
