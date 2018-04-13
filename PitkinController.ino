@@ -5,7 +5,6 @@ unsigned long lastTime = 0;
 
 //Output levels for the PWM: 100%, 80%, 60% and 30%
 const int output[] = { 255, 204, 153, 77 };
-
 const int lowestLevel = sizeof(output) / sizeof(int) - 1;
 
 void setup()
