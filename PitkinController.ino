@@ -2,9 +2,10 @@
 #define pwmPin 1
 int powerLevel = 0;
 unsigned long lastTime = 0;
+bool firstActivation = true;
 
 //Output levels for the PWM: 100%, 80%, 60% and 30%
-const int output[] = { 255, 10, 255, 10 };
+const int output[] = { 255, 204, 153, 77 };
 const int lowestLevel = sizeof(output) / sizeof(output[0]) - 1;
 
 void setup()
@@ -12,6 +13,7 @@ void setup()
 	//Use input pullup resistors to filter noise, and switch ground for the signal to the switchPin
 	pinMode(switchPin, INPUT_PULLUP);
 	pinMode(pwmPin, OUTPUT);
+	firstActivation = !isSwitchOn();
 }
 
 void loop()
@@ -61,7 +63,8 @@ void turnOff() {
 }
 
 void reducePower(){
-	if (!isLowestLevel(powerLevel)) {
+	if (!isLowestLevel(powerLevel) && !firstActivation) {
 		powerLevel++;
 	}
+	firstActivation = false;
 }	
