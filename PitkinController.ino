@@ -4,8 +4,8 @@ int powerLevel = 0;
 unsigned long lastTime = 0;
 
 //Output levels for the PWM: 100%, 80%, 60% and 30%
-const int output[] = { 255, 204, 153, 77 };
-const int lowestLevel = sizeof(output) / sizeof(int) - 1;
+const int output[] = { 255, 10, 255, 10 };
+const int lowestLevel = sizeof(output) / sizeof(output[0]) - 1;
 
 void setup()
 {
@@ -16,17 +16,16 @@ void setup()
 
 void loop()
 {
-	unsigned long currentTime = millis();
 
 	while (isSwitchOn()) {
-		setPowerLevel(powerLevel);
-		unsigned long offTime = currentTime - lastTime;
+		unsigned long offTime = millis() - lastTime;
 		if (offTime > 10000) {
 			reset();
 		}
-		else if (offTime > 200) {
+		else if (offTime > 100) {
 			reducePower();
 		}
+		outputPowerLevel(powerLevel);
 		lastTime = millis();
 	}
 
@@ -46,17 +45,19 @@ void reset() {
 	powerLevel = 0;
 }
 
-void setPowerLevel(int level) {
+void outputPowerLevel(int level) {
 	if (level < 0) {
 		analogWrite(pwmPin, 0);
+		return;
 	}
 	else {
 		analogWrite(pwmPin, output[level]);
+
 	}
 }
 
 void turnOff() {
-	setPowerLevel(-1);
+	outputPowerLevel(-1);
 }
 
 void reducePower(){
