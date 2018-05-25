@@ -1,4 +1,4 @@
-# PitkinController
+# Pitkin (PWM) Controller
 
 ### NOTE: This is a work in progress and has not yet been tested.
 
