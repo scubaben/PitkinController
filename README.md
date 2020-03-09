@@ -3,8 +3,8 @@
 ### NOTE: This is a work in progress and has not yet been tested.
 
 #### Harware:
-Adafruit Trinket: https://www.mouser.com/ProductDetail/Adafruit/1501  
-Mosfet: https://www.mouser.com/ProductDetail/infineon/irf540npbf/
+Microcontroller: [Adafruit Trinket - 5v](https://www.mouser.com/ProductDetail/Adafruit/1501?qs=sGAEpiMZZMsMyYRRhGMFNoKLjmgWf%252BLuSLcK67n%2Fm2U%3D)
+Mosfet: [FDP8860-ND](https://www.mouser.com/ProductDetail/ON-Semiconductor-Fairchild/FDP8860?qs=%2Fha2pyFaduh9C5letIlxnJh7zDohuxxUrs4l5qn1oz4%3D)
 
 #### Output levels:
 1. 100%
